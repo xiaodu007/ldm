@@ -27,7 +27,7 @@ public class CodeAutoGenerator {
                 .globalConfig(builder -> builder.author("weihao").disableOpenDir().outputDir(OUTPUT_DIR).dateType(DateType.ONLY_DATE))
                 // parent指定生成的代码在哪个包下，entity可以指定实体(DO)所在的包名
                 .packageConfig(builder ->builder.parent("com.research.manager.ldm")
-                            .entity("pojo")
+                            .entity("entity")
                             .controller("controller")
                             .service("service")
                             .serviceImpl("service.impl")
