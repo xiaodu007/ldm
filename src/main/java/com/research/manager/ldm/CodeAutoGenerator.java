@@ -1,6 +1,5 @@
 package com.research.manager.ldm;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.OutputFile;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
@@ -12,7 +11,7 @@ import java.util.Collections;
 
 public class CodeAutoGenerator {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/tesb_db";
+    private static final String URL = "jdbc:mysql://localhost:3306/test_db";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "weihao0917";
 
@@ -37,13 +36,13 @@ public class CodeAutoGenerator {
                 )
                 // addInclude指定包含的表名，不调用该方法默认为所有表生成代码；addTablePrefix可以过滤表前缀，即t_user变成user
                 .strategyConfig(builder ->
-                    builder.addInclude("sys_user").addTablePrefix("sys_")
+                    builder.addInclude("sys_user_role").addTablePrefix("sys_")
                                     // 禁用为实体类生成序列化ID；formatFileName格式化生成的实体类名称，即t_user -> UserDO
-                                    .entityBuilder().enableLombok().naming(NamingStrategy.underline_to_camel).columnNaming(NamingStrategy.underline_to_camel).idType(IdType.AUTO).formatFileName("%s")
+                                    .entityBuilder().enableLombok().naming(NamingStrategy.underline_to_camel).columnNaming(NamingStrategy.underline_to_camel).formatFileName("%s").enableFileOverride()
                                     // formatMapperFileName格式化Mapper接口名称，即t_user -> UserMapper
                                     // formatXmlFileName格式化Mapper.xml文件名称，即t_user -> UserMapper.xml
-                                    .mapperBuilder().enableBaseResultMap().enableBaseColumnList().formatMapperFileName("%sMapper").formatXmlFileName("%sMapper")
-                                    .serviceBuilder().formatServiceFileName("%sService").formatServiceImplFileName("%ServiceImpl").controllerBuilder().enableRestStyle()
+                                    .mapperBuilder().enableBaseResultMap().enableBaseColumnList().formatMapperFileName("%sMapper").formatXmlFileName("%sMapper").enableFileOverride()
+                                    .serviceBuilder().formatServiceFileName("%sService").formatServiceImplFileName("%ServiceImpl").enableFileOverride().controllerBuilder().enableRestStyle().enableFileOverride()
                 )
                 // MyBatis-Plus代码生成器是通过模板引擎来渲染文件的，默认模板引擎是Velocity，根据依赖我们使用Freemarker
                 .templateEngine(new FreemarkerTemplateEngine())
