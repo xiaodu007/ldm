@@ -8,6 +8,26 @@ spring:
     url: jdbc:mysql://localhost:3306/test_db?useSSL=false&serverTimezone=GMT%2B8
     username: root
     password: weihao0917
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    ## redis 链接池配置
+    lettuce:
+      pool:
+        ## 最大空闲连接数
+        max-idle: 16
+        ## 最大活跃连接数
+        max-active: 32
+        ## 最小空闲连接数
+        min-idle: 8
+    cache:
+      type: redis
+      redis:
+        ## 是否缓存空值 防止缓存穿透
+        cache-null-values: true
+        ## 加随机时间防止缓存雪崩
+        time-to-live: 360000
 ## mybatis的自定义mapper xml路径
 mybatis-plus:
   mapper-locations: classpath:/mapper/*.xml
