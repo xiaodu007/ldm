@@ -13,6 +13,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2025-03-24
  */
 public interface UserMapper extends BaseMapper<User> {
-
+    public User findByUsername(String username);
 }
 

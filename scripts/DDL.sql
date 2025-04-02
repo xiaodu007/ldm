@@ -37,3 +37,23 @@ CREATE TABLE sys_user_role(
     `UPDATED_TIME` DATETIME   COMMENT '更新时间' ,
     PRIMARY KEY (ID)
 )  COMMENT = '用户角色关联表';
+
+DROP TABLE IF EXISTS sys_menu;
+CREATE TABLE sys_menu(
+    `MENU_ID` INT AUTO_INCREMENT COMMENT '菜单ID' ,
+    `PARENT_ID` INT   COMMENT '父级菜单ID' ,
+    `MENU_NAME` VARCHAR(90)   COMMENT '菜单名称' ,
+    `COMPONENT` VARCHAR(90)   COMMENT '组件' ,
+    `VISIBLE` VARCHAR(1)   COMMENT '是否可见' ,
+    `CREATED_BY` VARCHAR(32)   COMMENT '创建人' ,
+    `CREATED_TIME` DATETIME   COMMENT '创建时间' ,
+    PRIMARY KEY (MENU_ID)
+)  COMMENT = '菜单信息表';
+
+DROP TABLE IF EXISTS sys_role_menu;
+CREATE TABLE sys_role_menu(
+    `ROLE_MENU_ID` INT AUTO_INCREMENT COMMENT '角色菜单ID' ,
+    `ROLE_ID` INT   COMMENT '角色ID' ,
+    `MENU_ID` INT   COMMENT '菜单ID' ,
+    PRIMARY KEY (ROLE_MENU_ID)
+)  COMMENT = '角色菜单绑定表';

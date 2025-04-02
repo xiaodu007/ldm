@@ -33,3 +33,9 @@ mybatis-plus:
   mapper-locations: classpath:/mapper/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+security:
+  jwt:
+    secretKey: ldmxiaodu
+    ttlMillis:
+    tokenHeader: token
+

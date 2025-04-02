@@ -22,4 +22,8 @@
         USER_ID, USER_NAME, PASSWORD, REAL_NAME, STATUS, EMAIL, MOBILE, CREATED_BY, CREATED_TIME, UPDATED_BY, UPDATED_TIME
     </sql>
 
+    <select id="findByUsername" parameterType="java.lang.String" resultType="com.research.manager.ldm.entity.User">
+        select <include refid="Base_Column_List"/> from sys_user where user_name= #{username}
+    </select>
+
 </mapper>

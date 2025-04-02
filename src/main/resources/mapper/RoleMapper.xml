@@ -18,4 +18,7 @@
         ROLE_ID, ROLE_NAME, STATUS, CREATED_BY, CREATED_TIME, UPDATED_BY, UPDATED_TIME
     </sql>
 
+    <select id="findMenusByUserId" parameterType="java.lang.Integer" resultType="java.lang.String">
+        select b.MENU_ID from sys_user_role a, sys_role_menu b where a.ROLE_ID =b.ROLE_ID and USER_ID = #{userId}
+    </select>
 </mapper>
