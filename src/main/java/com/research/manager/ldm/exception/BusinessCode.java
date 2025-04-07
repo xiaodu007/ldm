@@ -13,7 +13,8 @@ public enum BusinessCode implements StatusCode{
     PASSWORD_EXPIRED(500, "密码过期"),
     ACCOUNT_LOCK(500, "账户被锁"),
     ACCOUNT_DISABLED(500, "账户失效"),
-    USER_PASSWORD_ERROR(500,"用户名密码错误");
+    USER_PASSWORD_ERROR(500,"用户名密码错误"),
+    LOGIN_FAILD(500, "登录失败！");
 
     private int code;
     private String msg;

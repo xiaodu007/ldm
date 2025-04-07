@@ -30,8 +30,7 @@ import java.util.List;
 public class AuthenticationTokenFilter extends OncePerRequestFilter {
     @Autowired
     private LoginFailureHandler loginFailureHandler;
-    @Autowired
-    private SysSecurityProperties securityProperties;
+    private final SysSecurityProperties securityProperties;
     @Autowired
     private RedisUtil redisUtil;
     @Autowired
@@ -45,7 +44,7 @@ public class AuthenticationTokenFilter extends OncePerRequestFilter {
         try {
             String uri = request.getRequestURI();
             if (!uri.equals("/user/login")){
-                this.validateToekn(request, response);
+                this.validateToken(request, response);
             }
         } catch (AuthenticationException e) {
             loginFailureHandler.onAuthenticationFailure(request, response, e);
@@ -54,7 +53,7 @@ public class AuthenticationTokenFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    public void validateToekn(HttpServletRequest request, HttpServletResponse response){
+    public void validateToken(HttpServletRequest request, HttpServletResponse response){
         String token = request.getHeader(securityProperties.getTokenHeader());
         if (ObjectUtils.isEmpty(token)){
             token = request.getParameter(securityProperties.getTokenHeader());

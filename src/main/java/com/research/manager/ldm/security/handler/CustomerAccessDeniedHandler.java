@@ -1,15 +1,13 @@
 package com.research.manager.ldm.security.handler;
 
 import com.alibaba.fastjson.JSON;
-import com.research.manager.ldm.dto.ResultVo;
+import com.research.manager.ldm.vo.ResultVo;
 import com.research.manager.ldm.exception.BusinessCode;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
 

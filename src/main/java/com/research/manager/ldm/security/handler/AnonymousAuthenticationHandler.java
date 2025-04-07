@@ -1,7 +1,7 @@
 package com.research.manager.ldm.security.handler;
 
 import com.alibaba.fastjson.JSON;
-import com.research.manager.ldm.dto.ResultVo;
+import com.research.manager.ldm.vo.ResultVo;
 import com.research.manager.ldm.exception.BusinessCode;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletOutputStream;

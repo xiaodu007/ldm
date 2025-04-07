@@ -1,6 +1,6 @@
 package com.research.manager.ldm.exception;
 
-import com.research.manager.ldm.dto.ResultVo;
+import com.research.manager.ldm.vo.ResultVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

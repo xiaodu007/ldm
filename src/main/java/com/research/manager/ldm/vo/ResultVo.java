@@ -1,4 +1,4 @@
-package com.research.manager.ldm.dto;
+package com.research.manager.ldm.vo;
 
 import com.research.manager.ldm.exception.BusinessCode;
 import com.research.manager.ldm.exception.StatusCode;

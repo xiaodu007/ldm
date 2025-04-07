@@ -1,6 +1,6 @@
 package com.research.manager.ldm.controller;
 
-import com.research.manager.ldm.dto.ResultVo;
+import com.research.manager.ldm.vo.ResultVo;
 import com.research.manager.ldm.entity.User;
 import com.research.manager.ldm.exception.BusinessCode;
 import com.research.manager.ldm.service.UserService;

@@ -81,6 +81,10 @@ public class RedisUtil {
         redisTemplate.opsForValue().set(key, value);
     }
 
+    public void delete(String key){
+        redisTemplate.delete(key);
+    }
+
     /**
      * 将值放入缓存并设置时间
      *

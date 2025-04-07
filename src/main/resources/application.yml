@@ -36,6 +36,6 @@ mybatis-plus:
 security:
   jwt:
     secretKey: ldmxiaodu
-    ttlMillis:
+    ttlMillis: 7200
     tokenHeader: token
 
