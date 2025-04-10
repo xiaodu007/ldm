@@ -19,7 +19,7 @@ public class JwtUtil {
      */
     public static String createJWT(String secretKey, long ttlMillis, Map<String, String> claims) {
         // 生成JWT的时间
-        long expMillis = System.currentTimeMillis() + ttlMillis;
+        long expMillis = System.currentTimeMillis() + ttlMillis*1000;
         Date exp = new Date(expMillis);
         //创建jwt builder
         JWTCreator.Builder builder = JWT.create();

@@ -1,15 +1,15 @@
 package com.research.manager.sysmanager.service.impl;
 
 
+import com.research.manager.common.util.RedisUtil;
 import com.research.manager.sysmanager.dto.LoginDto;
 import com.research.manager.sysmanager.entity.User;
-import com.research.manager.sysmanager.exception.BusinessCode;
-import com.research.manager.sysmanager.exception.BusinessException;
+import com.research.manager.common.exception.BusinessCode;
+import com.research.manager.common.exception.BusinessException;
 import com.research.manager.sysmanager.security.SysSecurityProperties;
 import com.research.manager.sysmanager.security.entity.SysUserDetail;
 import com.research.manager.sysmanager.service.LoginService;
 import com.research.manager.sysmanager.util.JwtUtil;
-import com.research.manager.sysmanager.util.RedisUtil;
 import com.research.manager.sysmanager.vo.LoginVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -43,7 +43,7 @@ public class LoginServiceImpl implements LoginService {
         Map<String, String> claims = new HashMap<>();
         claims.put("id", String.valueOf(user.getUserId()));
         String token = JwtUtil.createJWT(properties.getSecretKey(), properties.getTtlMillis(), claims);
-        redisUtil.set("ldm_", token, properties.getTtlMillis());
+        redisUtil.set("ldm_"+token, token, properties.getTtlMillis());
         LoginVo loginVo = LoginVo.builder()
                 .userId(user.getUserId())
                 .userName(user.getUserName())

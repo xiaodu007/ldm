@@ -1,4 +1,4 @@
-package com.research.manager.sysmanager.exception;
+package com.research.manager.common.exception;
 
 import lombok.Getter;
 

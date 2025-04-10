@@ -8,29 +8,15 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.research.manager</groupId>
-    <artifactId>ldm-manager</artifactId>
+    <artifactId>common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sysmanager</name>
-    <description>sysmanager</description>
+    <name>ldm-common</name>
+    <description>ldm-common</description>
     <properties>
         <java.version>17</java.version>
     </properties>
     <dependencies>
-        <!--接口验证及鉴权-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.auth0</groupId>
-            <artifactId>java-jwt</artifactId>
-            <version>4.3.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.research.manager</groupId>
-            <artifactId>common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+
     </dependencies>
 
     <build>

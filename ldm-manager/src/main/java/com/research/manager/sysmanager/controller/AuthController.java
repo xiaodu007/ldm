@@ -1,13 +1,13 @@
 package com.research.manager.sysmanager.controller;
 
+import com.research.manager.common.util.RedisUtil;
 import com.research.manager.sysmanager.dto.LoginDto;
-import com.research.manager.sysmanager.exception.BusinessCode;
-import com.research.manager.sysmanager.exception.BusinessException;
+import com.research.manager.common.exception.BusinessCode;
+import com.research.manager.common.exception.BusinessException;
 import com.research.manager.sysmanager.security.SysSecurityProperties;
 import com.research.manager.sysmanager.service.LoginService;
-import com.research.manager.sysmanager.util.RedisUtil;
 import com.research.manager.sysmanager.vo.LoginVo;
-import com.research.manager.sysmanager.vo.ResultVo;
+import com.research.manager.common.vo.ResultVo;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;

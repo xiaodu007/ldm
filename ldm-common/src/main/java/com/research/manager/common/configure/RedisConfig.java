@@ -1,4 +1,4 @@
-package com.research.manager.sysmanager.configure;
+package com.research.manager.common.configure;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;

@@ -1,8 +1,8 @@
 package com.research.manager.sysmanager.security.handler;
 
 import com.alibaba.fastjson.JSON;
-import com.research.manager.sysmanager.exception.BusinessCode;
-import com.research.manager.sysmanager.vo.ResultVo;
+import com.research.manager.common.exception.BusinessCode;
+import com.research.manager.common.vo.ResultVo;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletRequest;

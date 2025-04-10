@@ -1,4 +1,4 @@
-package com.research.manager.sysmanager.configure;
+package com.research.manager.common.configure;
 
 import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

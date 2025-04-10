@@ -1,8 +1,9 @@
-package com.research.manager.sysmanager.vo;
+package com.research.manager.common.vo;
 
 
-import com.research.manager.sysmanager.exception.BusinessCode;
-import com.research.manager.sysmanager.exception.StatusCode;
+
+import com.research.manager.common.exception.BusinessCode;
+import com.research.manager.common.exception.StatusCode;
 import lombok.Data;
 
 @Data

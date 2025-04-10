@@ -33,9 +33,11 @@ public class SysUserDetail implements Serializable, UserDetails {
             return authorities;
         }
         authorities = new ArrayList<>();
-        permissions.forEach(permission -> {
-            authorities.add(new SimpleGrantedAuthority(permission));
-        });
+        if (permissions != null){
+            permissions.forEach(permission -> {
+                authorities.add(new SimpleGrantedAuthority(permission));
+            });
+        }
         return authorities;
     }
 

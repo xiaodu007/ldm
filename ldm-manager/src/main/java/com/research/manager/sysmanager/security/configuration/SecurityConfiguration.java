@@ -40,7 +40,7 @@ public class SecurityConfiguration {
         http.csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth ->
-                        auth.requestMatchers("/user/login")
+                        auth.requestMatchers("/user/login","/user/saveUser","/user/loginOut")
                                 .permitAll()
                                 .anyRequest()
                                 .authenticated())

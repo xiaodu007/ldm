@@ -1,4 +1,4 @@
-package com.research.manager.sysmanager.util;
+package com.research.manager.common.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

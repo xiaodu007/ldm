@@ -17,6 +17,7 @@
 	<modules>
 		<module>ldm-library</module>
 		<module>ldm-manager</module>
+		<module>ldm-common</module>
 	</modules>
 
 	<properties>

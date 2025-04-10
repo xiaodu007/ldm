@@ -1,6 +1,6 @@
-package com.research.manager.sysmanager.exception;
+package com.research.manager.common.exception;
 
-import com.research.manager.sysmanager.vo.ResultVo;
+import com.research.manager.common.vo.ResultVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -17,6 +17,7 @@ public class ControllerExceptionAdvice {
 
     @ExceptionHandler(Exception.class)
     public ResultVo OtherExceptionHandler(Exception e){
+        e.printStackTrace();
         log.error("发生其他异常{}", e.getMessage());
         return new ResultVo(BusinessCode.BUSINESS_ERROR.getCode(), BusinessCode.BUSINESS_ERROR.getMsg(), e.getMessage());
     }

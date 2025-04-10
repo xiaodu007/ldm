@@ -2,15 +2,15 @@ package com.research.manager.sysmanager.security.filter;
 
 import com.auth0.jwt.interfaces.DecodedJWT;
 
+import com.research.manager.common.util.RedisUtil;
 import com.research.manager.sysmanager.entity.User;
-import com.research.manager.sysmanager.exception.BusinessException;
+import com.research.manager.common.exception.BusinessException;
 import com.research.manager.sysmanager.mapper.RoleMapper;
 import com.research.manager.sysmanager.mapper.UserMapper;
 import com.research.manager.sysmanager.security.SysSecurityProperties;
 import com.research.manager.sysmanager.security.entity.SysUserDetail;
 import com.research.manager.sysmanager.security.handler.LoginFailureHandler;
 import com.research.manager.sysmanager.util.JwtUtil;
-import com.research.manager.sysmanager.util.RedisUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -44,7 +44,7 @@ public class AuthenticationTokenFilter extends OncePerRequestFilter {
 
         try {
             String uri = request.getRequestURI();
-            if (!uri.equals("/user/login")){
+            if (!uri.equals("/user/login") && !uri.equals("/user/loginOut") && !uri.equals("/user/saveUser")) {
                 this.validateToken(request, response);
             }
         } catch (AuthenticationException e) {
@@ -63,7 +63,7 @@ public class AuthenticationTokenFilter extends OncePerRequestFilter {
             response.setStatus(401);
             throw new BusinessException("token为空");
         }
-        String redisToken = redisUtil.get("ldm_" + token).toString();
+        String redisToken = redisUtil.get("ldm_"+token).toString();
         if (ObjectUtils.isEmpty(redisToken)){
             response.setStatus(401);
             throw new BusinessException("token已过期");
